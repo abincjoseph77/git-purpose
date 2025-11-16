@@ -16,9 +16,9 @@ def create(request):
         form = User_form()
     return render(request,'create.html',{'form':form})
 
-def read(request):
-    users = User.objects.all()
-    return render(request,'list.html',{'users':users})
+# def read(request):
+#     users = User.objects.all()
+#     return render(request,'list.html',{'users':users})
 
 def details(request,pk):
     user = get_object_or_404(User,pk=pk)
