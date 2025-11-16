@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<p>f name: {{user.fname}}</p>
+<p>l name: {{user.lname}}</p>
+<p>email: {{user.email}}</p>
+<a href="{% url 'update' user.pk %}">Edit</a>
+{% endblock content %}

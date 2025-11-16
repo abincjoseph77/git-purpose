@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    {% for user in users %}
+    <a href='{% url 'details' user.pk %}'><li>{{user.fname}} {{user.lname}} {{user.email}} {{user.photo}}</li></a>
+    <form method='post' action='{% url 'delete' user.pk %}'>
+        {% csrf_token %}
+        <button type='submit'>delete</button>
+    </form>
+    {% endfor %}
+{% endblock content %}
